@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import Feature from "./components/Feature";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Slider />
       <Feature />
+      <About />
     </MenuContextProvider>
   );
 }
