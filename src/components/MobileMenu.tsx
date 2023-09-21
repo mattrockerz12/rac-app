@@ -1,11 +1,11 @@
-import React, { useContext, useRef } from "react";
+import React, { Fragment, MutableRefObject, useContext, useRef } from "react";
 import { FooterBottomData, NavLinksData } from "../data";
 import { MenuContext } from "../context/menu-context";
 import { Link } from "react-router-dom";
 
 const MobileMenu = () => {
   const { menuStatus, updateMenuStatus } = useContext(MenuContext);
-  const menuEl = useRef(null);
+  const menuEl = useRef() as MutableRefObject<HTMLUListElement>;
   const handleMenuClick = (e: React.FormEvent) => {
     e.preventDefault();
     updateMenuStatus(!menuStatus);
@@ -33,6 +33,33 @@ const MobileMenu = () => {
                   }`}
                 >
                   <Link to={links.url}>{links.name}</Link>
+                  {undefined !== links.subItems ? (
+                    <Fragment>
+                      <button
+                        onClick={(e: React.BaseSyntheticEvent) => {
+                          menuEl.current
+                            .querySelectorAll(".sub-menu")
+                            .forEach((item) => {
+                              item.classList.remove("show");
+                            });
+
+                          let clickedItem = e.currentTarget.parentNode;
+                          clickedItem
+                            .querySelector(".sub-menu")
+                            .classList.toggle("show");
+                        }}
+                      >
+                        <i className="fa fa-angle-down"></i>
+                      </button>
+                      <ul ref={menuEl} className="sub-menu">
+                        {links.subItems.map((subLinks, index) => (
+                          <li key={index}>
+                            <Link to={subLinks.url}>{subLinks.name}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </Fragment>
+                  ) : null}
                 </li>
               );
             })}
