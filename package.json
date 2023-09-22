@@ -20,7 +20,7 @@
     "react-router-dom": "^6.16.0",
     "react-scroll": "^1.8.9",
     "react-visibility-sensor": "^5.1.1",
-    "swiper": "^10.2.0"
+    "swiper": "^10.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.6.3",

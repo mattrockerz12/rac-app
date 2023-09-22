@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import About from "./components/About";
 import Cta from "./components/Cta";
@@ -10,6 +10,7 @@ import Service from "./components/Service";
 import Slider from "./components/Slider";
 import MenuContextProvider from "./context/menu-context";
 import { Link as ScrollLink } from "react-scroll";
+import Testimonial from "./components/Testimonial";
 
 function App() {
   const [scrollTop, setScrollTop] = useState(false);
@@ -40,6 +41,7 @@ function App() {
         <Cta />
         <FunFact />
         <Gallery />
+        <Testimonial />
       </MenuContextProvider>
       {scrollTop === true ? (
         <ScrollLink
