@@ -11,6 +11,7 @@ import Slider from "./components/Slider";
 import MenuContextProvider from "./context/menu-context";
 import { Link as ScrollLink } from "react-scroll";
 import Testimonial from "./components/Testimonial";
+import Sponsor from "./components/Sponsor";
 
 function App() {
   const [scrollTop, setScrollTop] = useState(false);
@@ -33,15 +34,18 @@ function App() {
   return (
     <>
       <MenuContextProvider>
-        <Header />
-        <Slider />
-        <Feature />
-        <About />
-        <Service />
-        <Cta />
-        <FunFact />
-        <Gallery />
-        <Testimonial />
+        <div id="wrapper">
+          <Header />
+          <Slider />
+          <Feature />
+          <About />
+          <Service />
+          <Cta />
+          <FunFact />
+          <Gallery />
+          <Testimonial />
+          <Sponsor />
+        </div>
       </MenuContextProvider>
       {scrollTop === true ? (
         <ScrollLink

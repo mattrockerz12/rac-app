@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { FunfactOneData } from "../data";
 import { Col, Container, Row } from "react-bootstrap";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import CountUp from "react-countup";
 
 const FunFact = () => {
-  const countUpRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  //const countUpRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const { shapeImage, title, posts } = FunfactOneData;
 

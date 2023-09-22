@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialOneData } from "../data";
 import { Autoplay, Thumbs, Navigation } from "swiper/modules";
 
 const Testimonial = () => {
   const { title, posts } = TestimonialOneData;
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   const testimonialsThumbOptions = {
     slidesPerView: 3,
@@ -34,7 +34,6 @@ const Testimonial = () => {
       <h1 className="testimonial_heading_shape">{title}</h1>
       <Container>
         <Swiper
-          watchSlidesProgress
           id="testimonials-two__thumb"
           onSwiper={setThumbsSwiper}
           {...testimonialsThumbOptions}
@@ -52,7 +51,7 @@ const Testimonial = () => {
           ))}
         </Swiper>
         <Swiper
-          modules={[Autoplay, Thumbs, Navigation]}
+          modules={[Thumbs, Autoplay, Navigation]}
           className="testimonial_slider "
           id="testimonials-two__carousel"
           thumbs={{

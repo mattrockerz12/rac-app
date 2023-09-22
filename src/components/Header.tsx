@@ -103,7 +103,7 @@ const Header = () => {
         </div>
       </div>
 
-      {menuStatus ? <MobileMenu /> : null}
+      {menuStatus === true ? <MobileMenu /> : null}
     </>
   );
 };
