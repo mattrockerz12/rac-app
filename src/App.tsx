@@ -15,6 +15,7 @@ import Sponsor from "./components/Sponsor";
 import CtaTwo from "./components/CtaTwo";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [scrollTop, setScrollTop] = useState(false);
@@ -51,6 +52,7 @@ function App() {
           <CtaTwo />
           <Blog />
           <Contact />
+          <Footer />
         </div>
       </MenuContextProvider>
       {scrollTop === true ? (
