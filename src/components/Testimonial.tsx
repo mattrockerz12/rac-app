@@ -47,7 +47,6 @@ const Testimonial = () => {
                   alt={name}
                   style={{
                     display: "block",
-
                     minWidth: "100%",
                     maxWidth: "100%",
                     minHeight: "100%",
