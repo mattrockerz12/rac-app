@@ -13,6 +13,7 @@ import { Link as ScrollLink } from "react-scroll";
 import Testimonial from "./components/Testimonial";
 import Sponsor from "./components/Sponsor";
 import CtaTwo from "./components/CtaTwo";
+import Blog from "./components/Blog";
 
 function App() {
   const [scrollTop, setScrollTop] = useState(false);
@@ -47,6 +48,7 @@ function App() {
           <Testimonial />
           <Sponsor />
           <CtaTwo />
+          <Blog />
         </div>
       </MenuContextProvider>
       {scrollTop === true ? (
