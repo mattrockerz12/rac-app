@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import SwiperCore, { Autoplay, Thumbs, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialOneData } from "../data";
-import { Autoplay, Thumbs, Navigation } from "swiper/modules";
+SwiperCore.use([Autoplay, Thumbs, Navigation]);
 
 const Testimonial = () => {
   const { title, posts } = TestimonialOneData;
@@ -44,19 +45,23 @@ const Testimonial = () => {
                 <img
                   src={image}
                   alt={name}
-                  style={{ height: "auto", maxWidth: "100%" }}
+                  style={{
+                    display: "block",
+
+                    minWidth: "100%",
+                    maxWidth: "100%",
+                    minHeight: "100%",
+                    maxHeight: "100%",
+                  }}
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
         <Swiper
-          modules={[Thumbs, Autoplay, Navigation]}
           className="testimonial_slider "
           id="testimonials-two__carousel"
-          thumbs={{
-            swiper: thumbsSwiper,
-          }}
+          thumbs={{ swiper: thumbsSwiper }}
           {...testimonialsOptions}
         >
           {posts.map(({ designation, name, content }, index) => (

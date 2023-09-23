@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+//import "swiper/css/bundle";
 import "swiper/css/bundle";
 import "@fontsource/josefin-sans/100.css";
 import "@fontsource/josefin-sans/300.css";

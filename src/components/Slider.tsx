@@ -2,15 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Col, Container, Row } from "react-bootstrap";
 import { SlideOneData } from "../data";
 import { Link } from "react-router-dom";
-import { Navigation, Autoplay, EffectFade } from "swiper/modules";
+import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper";
+SwiperCore.use([Autoplay, Navigation, EffectFade]);
 
 const Slider = () => {
-  const mainSlideOptions: {
-    slidesPerView: number;
-    loop: boolean;
-    effect: string;
-    autoplay: { delay: number };
-  } = {
+  const mainSlideOptions: any = {
     slidesPerView: 1,
     loop: true,
     effect: "fade",
@@ -21,10 +17,7 @@ const Slider = () => {
 
   return (
     <section className="main-slider header_slider_area ">
-      <Swiper
-        modules={[Navigation, Autoplay, EffectFade]}
-        {...mainSlideOptions}
-      >
+      <Swiper {...mainSlideOptions}>
         {SlideOneData.map(
           ({ backgroundImage, title, text, button, url }, index) => (
             <SwiperSlide key={index}>

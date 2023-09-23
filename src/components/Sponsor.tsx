@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import brandImage from "../assets/images/client-logo.png";
-import { Autoplay } from "swiper/modules";
 
 const Sponsor = () => {
   const sponsorCarouselOptions = {
@@ -39,11 +38,7 @@ const Sponsor = () => {
   return (
     <div className={`clients_logo_area text-center section_padding`}>
       <Container>
-        <Swiper
-          modules={[Autoplay]}
-          {...sponsorCarouselOptions}
-          className="clients_logo "
-        >
+        <Swiper {...sponsorCarouselOptions} className="clients_logo ">
           <div className="swiper-wrapper">
             <SwiperSlide>
               <img src={brandImage} alt="" />
